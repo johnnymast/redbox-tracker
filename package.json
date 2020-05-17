@@ -1,0 +1,31 @@
+{
+  "name": "redbox-tracker",
+  "version": "1.0.0",
+  "description": "WORK IN PROGRESS!",
+  "main": "index.js",
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-formatter-pretty": "^3.0.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "standard": "^14.3.3",
+    "stylelint": "^13.3.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint -c eslintrc.json --format=pretty ./public/js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnnymast/Redbox-Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnnymast/Redbox-Tracker/issues"
+  },
+  "homepage": "https://github.com/johnnymast/Redbox-Tracker#readme"
+}

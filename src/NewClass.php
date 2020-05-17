@@ -1,5 +1,5 @@
 <?php
-namespace Redbox\Package;
+namespace Redbox\Tracker;
 
 
 class NewClass

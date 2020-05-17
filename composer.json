@@ -1,0 +1,34 @@
+{
+  "name": "redbox/redbox-package-skeleton",
+  "description": "",
+  "keywords": [],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Johnny Mast",
+      "email": "mastjohnny@gmail.com",
+      "homepage": "https://github.com/johnnymast",
+      "role": "lead"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Redbox\\Package\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Redbox\\Package\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit"
+  }
+}

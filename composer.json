@@ -13,7 +13,8 @@
     }
   ],
   "require": {
-    "php": ">=5.4.0"
+    "php": ">=5.5",
+    "piwik/device-detector": "^3.12"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.6",
@@ -36,7 +37,10 @@
     "laravel": {
       "providers": [
         "Redbox\\Tracker\\Providers\\TrackerServiceProvider"
-      ]
+      ],
+      "aliases": {
+        "Tracker": "Redbox\\Tracker\\Facades\\Tracker"
+      }
     }
   }
 }

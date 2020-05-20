@@ -1,12 +1,51 @@
 <?php
 
+/**
+ * Tracker.php
+ *
+ * This Facade is doing the actual tracking for the package. The tracker is
+ * instantiated by the TrackingMiddleware. Based on the rules defined in the
+ * tracker.php configuration file it will track (or not track) visitors on your
+ * website.
+ *
+ * This project is heavily inspired by Laravel Visitor Tracker and this file is
+ * where most of the source is almost identical to that project.
+ *
+ * [Laravel Visitor Tracker](https://github.com/voerro/laravel-visitor-tracker)
+ *
+ * PHP version 7.2
+ *
+ * @category Facades
+ * @package  RedboxTracker
+ * @author   Johnny Mast <mastjohnny@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT
+ * @link     https://github.com/johnnymast/redbox-tracker
+ * @since    GIT:1.0
+ */
+
 namespace Redbox\Tracker;
 
 use DeviceDetector\DeviceDetector;
 
+/**
+ * Tracker class
+ *
+ * Facade for tracking website visitors.
+ *
+ * @category Facades
+ * @package  RedboxTracker
+ * @author   Johnny Mast <mastjohnny@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT
+ * @link     https://github.com/johnnymast/redbox-tracker
+ * @since    GIT:1.0
+ */
 class Tracker
 {
 
+
+    /**
+     * Tracker constructor.
+     */
     public function __construct()
     {
         $this->dd = new DeviceDetector(request()->header('User-Agent'));
@@ -20,13 +59,10 @@ class Tracker
      */
     public function recordVisit(): bool
     {
-        $config = config('redbox-tracker');
-        $user = request()->user();
-        $routeName = request()->route()->getName();
+        $config     = config('redbox-tracker');
+        $user       = request()->user();
+        $routeName  = request()->route()->getName();
         $methodName = request()->getMethod();
-
-//        session()->forget('visitor');
-//        return true;
 
         /**
          * Check if we should skip the current round.
@@ -74,15 +110,15 @@ class Tracker
         $visitor->fill($this->collect());
         $visitor->save();
 
-        $visitorRequest = new VisitorRequest();
+        $visitorRequest             = new VisitorRequest();
         $visitorRequest->visitor_id = $visitor['id'];
-        $visitorRequest->domain = request()->getHttpHost();
-        $visitorRequest->method = $methodName;
-        $visitorRequest->route = $routeName;
-        $visitorRequest->referer = request()->headers->get('Referer');
-        $visitorRequest->is_secure = request()->isSecure();
-        $visitorRequest->is_ajax = \request()->ajax();
-        $visitorRequest->path = request()->path() ?? '';
+        $visitorRequest->domain     = request()->getHttpHost();
+        $visitorRequest->method     = $methodName;
+        $visitorRequest->route      = $routeName;
+        $visitorRequest->referer    = request()->headers->get('Referer');
+        $visitorRequest->is_secure  = request()->isSecure();
+        $visitorRequest->is_ajax    = \request()->ajax();
+        $visitorRequest->path       = request()->path() ?? '';
 
         $visitor->requests()->save($visitorRequest);
 

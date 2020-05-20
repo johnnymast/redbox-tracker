@@ -1,21 +1,38 @@
 <?php
 
+/**
+ * VisitorRequest.php
+ *
+ * This model contains information about requests visitors make
+ * on your website. This model is linked by a hasMany on the Visitor model.
+ * Every VisitorRequest has one unique visitor record represented by the belongsTo
+ * visitor relation.
+ *
+ * PHP version 7.2
+ *
+ * @category Models
+ * @package  RedboxTracker
+ * @author   Johnny Mast <mastjohnny@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT
+ * @link     https://github.com/johnnymast/redbox-tracker
+ * @since    GIT:1.0
+ */
+
 namespace Redbox\Tracker;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * VisitorRequest class
  *
  * Model for website visitor requests.
  *
- * PHP version 7.2
- *
  * @category Models
- * @package  redbox-tracker
+ * @package  RedboxTracker
  * @author   Johnny Mast <mastjohnny@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT
- * @link     https://github.com/johnnymast/alexia
+ * @link     https://github.com/johnnymast/redbox-tracker
  * @since    GIT:1.0
  */
 class VisitorRequest extends Model
@@ -37,7 +54,12 @@ class VisitorRequest extends Model
     ];
 
 
-    public function visitor()
+    /**
+     * Return the visitor for this request.
+     *
+     * @return Visitor
+     */
+    public function visitor(): Visitor
     {
         return $this->belongsTo(Visitor::class);
     }

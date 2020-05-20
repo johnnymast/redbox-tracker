@@ -1,27 +1,52 @@
 <?php
 
+/**
+ * TrackerServiceProvider.php
+ *
+ * The main purpose of this service provider is to make sure laravel
+ * knows where our publishable resources are in our package.
+ *
+ * PHP version 7.2
+ *
+ * @category Providers
+ * @package  RedboxTracker
+ * @author   Johnny Mast <mastjohnny@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT
+ * @link     https://github.com/johnnymast/redbox-tracker
+ * @since    GIT:1.0
+ */
+
 namespace Redbox\Tracker\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Redbox\Tracker\Middleware\TrackingMiddleware;
-use Redbox\Tracker\Observers\Visitor as VisitorObserver;
+use Redbox\Tracker\Observers\VisitorObserver as VisitorObserver;
 use Redbox\Tracker\Tracker;
 use Redbox\Tracker\Visitor;
 
+/**
+ * Class TrackerServiceProvider
+ *
+ * @category Providers
+ * @package  RedboxTracker
+ * @author   Johnny Mast <mastjohnny@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT
+ * @link     https://github.com/johnnymast/redbox-tracker
+ * @since    GIT:1.0
+ */
 class TrackerServiceProvider extends ServiceProvider
 {
 
     /**
      * Register the publishable files.
+     *
+     * @return void
      */
     private function registerPublishableResources(): void
     {
-        $path = dirname(__DIR__).'/../../publishable';
+        $path = dirname(__DIR__) . '/../../publishable';
 
         $publishable = [
-          'translations' => [
-            "{$path}/config/lang" => resource_path('lang/vendor/redbox-tracker'),
-          ],
           'config' => [
             "{$path}/config/tracker.php" => config_path('tracker.php'),
           ],
@@ -33,6 +58,11 @@ class TrackerServiceProvider extends ServiceProvider
     }
 
 
+    /**
+     * Register configurations and facade(s).
+     *
+     * @return void
+     */
     public function register(): void
     {
         $this->app->singleton(
@@ -47,7 +77,7 @@ class TrackerServiceProvider extends ServiceProvider
         if ($this->app->config->get('redbox-tracker') === null) {
             $this->app->config->set(
                 'redbox-tracker',
-                require __DIR__.'/../../publishable/config/tracker.php'
+                require __DIR__ . '/../../publishable/config/tracker.php'
             );
         }
 
@@ -61,10 +91,14 @@ class TrackerServiceProvider extends ServiceProvider
         }
     }
 
+    /**
+     * Tell Laravel where to look for the package it's migrations.
+     *
+     * @return void
+     */
     public function boot(): void
     {
-        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'tracker');
-        $this->loadMigrationsFrom(realpath(__DIR__.'/../../migrations'));
+        $this->loadMigrationsFrom(realpath(__DIR__ . '/../../migrations'));
 
         Visitor::observe(VisitorObserver::class);
     }

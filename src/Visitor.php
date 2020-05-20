@@ -1,5 +1,22 @@
 <?php
 
+/**
+ * Visitor.php
+ *
+ * The visitor model represents data from one single unique visitor to your site.
+ * It has a hasMany relationship with the VisitorRequest model that stores all
+ * requests made by this unique visitor.
+ *
+ * PHP version 7.2
+ *
+ * @category Models
+ * @package  RedboxTracker
+ * @author   Johnny Mast <mastjohnny@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT
+ * @link     https://github.com/johnnymast/redbox-tracker
+ * @since    GIT:1.0
+ */
+
 namespace Redbox\Tracker;
 
 use Illuminate\Database\Eloquent\Model;
@@ -12,10 +29,10 @@ use Illuminate\Database\Eloquent\Model;
  * PHP version 7.2
  *
  * @category Models
- * @package  redbox-tracker
+ * @package  RedboxTracker
  * @author   Johnny Mast <mastjohnny@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT
- * @link     https://github.com/johnnymast/alexia
+ * @link     https://github.com/johnnymast/redbox-tracker
  * @since    GIT:1.0
  */
 class Visitor extends Model
@@ -65,7 +82,13 @@ class Visitor extends Model
         return Visitor::whereUniqueId($id)->exists();
     }
 
-    public function requests()
+
+    /**
+     * Return the requests made by this visitor.
+     *
+     * @return array
+     */
+    public function requests(): array
     {
         return $this->hasMany(VisitorRequest::class);
     }

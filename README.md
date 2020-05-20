@@ -3,6 +3,13 @@ WORK IN PROGRESS!
 
 This project is inspired by [Laravel Visitor Tracker](https://github.com/voerro/laravel-visitor-tracker). I have created my own version of this software because I need that functionality for a project of my own. This means i want all my dependenties for that
 projects 'in house'.
+
+## TODO
+
+- [ ] add $except in middleware
+- [ ] publish middleware
+- [ ] collect more user information
+- [ ] fire event for new visitors
   
 
 ## Author

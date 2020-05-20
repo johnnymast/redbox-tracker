@@ -3,17 +3,16 @@
 namespace Redbox\Tracker;
 
 use Illuminate\Database\Eloquent\Model;
-use Redbox\Tracker\VisitorRequest;
 
 /**
- * Visitor Status
+ * Visitor class
  *
  * Model for website visitors.
  *
  * PHP version 7.2
  *
- * @category Statistics
- * @package  Alexia
+ * @category Models
+ * @package  redbox-tracker
  * @author   Johnny Mast <mastjohnny@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT
  * @link     https://github.com/johnnymast/alexia

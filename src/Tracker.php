@@ -3,7 +3,6 @@
 namespace Redbox\Tracker;
 
 use DeviceDetector\DeviceDetector;
-use http\Env\Request;
 
 class Tracker
 {
@@ -15,6 +14,8 @@ class Tracker
     }
 
     /**
+     * Record the visit can create a new record if needed.
+     *
      * @return bool
      */
     public function recordVisit(): bool
@@ -48,7 +49,6 @@ class Tracker
         if ($config['allowed_methods'] === false && $this->dd->isBot() == true) {
             return false;
         }
-
 
         /**
          * If we are not allowed to tracked authenticated users return false.
@@ -84,7 +84,6 @@ class Tracker
         $visitorRequest->is_ajax = \request()->ajax();
         $visitorRequest->path = request()->path() ?? '';
 
-
         $visitor->requests()->save($visitorRequest);
 
         request()->merge(['visitor' => $visitor]);
@@ -93,7 +92,12 @@ class Tracker
         return true;
     }
 
-    public function collect()
+    /**
+     * Collect Visitor information so we can store i with the visitor.
+     *
+     * @return array
+     */
+    public function collect(): array
     {
         $request = request();
 
@@ -101,7 +105,6 @@ class Tracker
           'ip' => $request->ip(),
           'user_id' => $request->user()->id ?? 0,
           'user_agent' => $request->userAgent(),
-
           'is_mobile' => (int)$this->dd->isMobile(),
           'is_desktop' => (int)$this->dd->isDesktop(),
           'is_bot' => (int)$this->dd->isBot(),
@@ -109,7 +112,6 @@ class Tracker
           'os' => $this->dd->getOs('name'),
           'browser_version' => $this->dd->getClient('version'),
           'browser' => $this->dd->getClient('name')
-
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 
 namespace Redbox\Tracker\Facades;
+
 use Illuminate\Support\Facades\Facade;
 
 class Tracker extends Facade

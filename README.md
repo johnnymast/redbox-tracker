@@ -1,3 +1,5 @@
+![Phpcs](https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg)
+
 # Redbox-Tracker
 WORK IN PROGRESS!
 

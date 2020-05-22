@@ -1,7 +1,5 @@
 ![Phpcs](https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg)
-
-![profile](https://user-images.githubusercontent.com/121194/82691279-ec62a200-9c5d-11ea-91be-7f5eceb370e4.png)
-
+![small](https://user-images.githubusercontent.com/121194/82691564-6b57da80-9c5e-11ea-87ec-639ad2255e8a.png)
 
 # Redbox-tracker
 WORK IN PROGRESS!

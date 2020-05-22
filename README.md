@@ -14,12 +14,6 @@ Redbox-tracker allows helps you to track visiting traffic to your Laravel websit
 
 This package is in development. Using this package at this point is discouraged.
 
-
-## TODO
-
-- [ ] collect more user information
-- [x] fire event for new visitors
-
 # Getting started
 
 ## Prerequisites
@@ -43,6 +37,12 @@ Publish configuration file:
 
 ```bash
 php artisan vendor:publish --provider="Redbox\Tracker\Providers\TrackerServiceProvider"
+```
+
+Install the database tables:
+
+```php
+php artisan migrate
 ```
 
 Create a listener for new visitors in your project: 

@@ -10,7 +10,7 @@ Tracking Movement
 <a href="https://scrutinizer-ci.com/g/johnnymast/redbox-tracker/build-status/master"><img src="https://scrutinizer-ci.com/g/johnnymast/redbox-tracker/badges/build.png?b=master" /></a>
 
 </p>
-
+ 
 Redbox-tracker allows helps you to track visiting traffic to your Laravel website. New visitors along with their requests will be saved to the database.
 
 ## WORK IN PROGRESS!

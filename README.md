@@ -2,7 +2,7 @@
 ![Phpcs](https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg)
 
 (https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg "Phpcs tests")
-h2 align="center">
+<h2 align="center">
    blabla
 </h2>
 # Redbox-tracker

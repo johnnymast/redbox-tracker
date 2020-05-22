@@ -1,6 +1,9 @@
 ![Phpcs](https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg)
 
-# Redbox-Tracker
+![profile](https://user-images.githubusercontent.com/121194/82691279-ec62a200-9c5d-11ea-91be-7f5eceb370e4.png)
+
+
+# Redbox-tracker
 WORK IN PROGRESS!
 
 This project is inspired by [Laravel Visitor Tracker](https://github.com/voerro/laravel-visitor-tracker). I have created my own version of this software because I need that functionality for a project of my own. This means i want all my dependenties for that

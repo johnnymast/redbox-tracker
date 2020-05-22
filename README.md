@@ -8,7 +8,9 @@
    Redbox-tracker
 </h2>
 
+<p align="center">
 [![Phpcs tests](https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg)](https://github.com/johnnymast/redbox-tracker/actions?query=workflow%3APhpcs)
+</p>
 
 
 # Redbox-tracker

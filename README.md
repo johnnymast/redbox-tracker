@@ -8,11 +8,11 @@ Tracking Movement
 <a href="https://github.com/johnnymast/redbox-tracker/actions?query=workflow%3APhpcs"><img src="https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg" /></a>
 </p>
 
-Redbox-tracker allows helps you track visiting traffic to your laravel website. New visitors along with their requests will be saved to the database. 
+Redbox-tracker allows helps you to track visiting traffic to your Laravel website. New visitors along with their requests will be saved to the database.
 
 ## WORK IN PROGRESS!
 
-This package is still being development. Using this package at this point in time is discouraged.
+This package is still being developed. Using this package at this point is discouraged.
 
 
 
@@ -97,8 +97,8 @@ For more detailed information about how to use this package I would like to send
 
 ## Disclaimer
 
-This project is inspired by [Laravel Visitor Tracker](https://github.com/voerro/laravel-visitor-tracker). I have created my own version of this software because I need that functionality for a project of my own. This means i want all my dependenties for that
-projects 'Inhouse'.
+This project is inspired by Laravel Visitor Tracker. I have created my own version of this software because I need that functionality for a project of my own. 
+This means I want all my dependencies for that projects 'Inhouse'.
 
 
 ## Author

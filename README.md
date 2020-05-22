@@ -9,13 +9,10 @@ Tracking Movement
 </p>
 
 
+## WORK IN PROGRESS!
 
+This package is still being development. Using this package at this point in time is discouraged.
 
-# Redbox-tracker
-WORK IN PROGRESS!
-
-This project is inspired by [Laravel Visitor Tracker](https://github.com/voerro/laravel-visitor-tracker). I have created my own version of this software because I need that functionality for a project of my own. This means i want all my dependenties for that
-projects 'Inhouse'.
 
 
 ## TODO
@@ -53,6 +50,11 @@ php artisan vendor:publish --provider="Redbox\Tracker\Providers\TrackerServicePr
 
 ## Documentation
 
+
+## Disclaimer
+
+This project is inspired by [Laravel Visitor Tracker](https://github.com/voerro/laravel-visitor-tracker). I have created my own version of this software because I need that functionality for a project of my own. This means i want all my dependenties for that
+projects 'Inhouse'.
 
 
 ## Author

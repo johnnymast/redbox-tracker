@@ -75,10 +75,27 @@ And update the <code>$listen</code> array with:
     /.../
 ```
 
+In <code>App\Listeners\NewvisitorListener</copde> you now have access to the visitor data from <coode>$event->visitor</code>.
+
+
+```php
+     /.../
+    /**
+     * Handle the event.
+     *
+     * @param  object  $event
+     * @return void
+     */
+    public function handle($event)
+    {
+        dd($event->visitor);
+    }
+    /.../
+```
 
 ## Documentation
 
-For more information about how to use this package I like to send you to the [project wiki](https://github.com/johnnymast/redbox-tracker/wiki).
+For more detailed information about how to use this package I would like to send you to the [project wiki](https://github.com/johnnymast/redbox-tracker/wiki).
 
 ## Disclaimer
 

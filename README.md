@@ -70,7 +70,7 @@ And update the <code>$listen</code> array with:
     ];
 ```
 
-In <code>App\Listeners\NewvisitorListener</code> you now have access to the visitor data from <coode>$event->visitor</code>.
+In <code>App\Listeners\NewvisitorListener</code> you now have access to the visitor data from <code>$event->visitor</code>.
 
 
 ```php

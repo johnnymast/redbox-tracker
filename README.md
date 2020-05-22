@@ -50,7 +50,7 @@ php artisan vendor:publish --provider="Redbox\Tracker\Providers\TrackerServicePr
 
 ## Documentation
 
-For more information about how to use this package I like to send you to the (project wiki)[/wiki].
+For more information about how to use this package I like to send you to the [project wiki](/wiki).
 
 ## Disclaimer
 

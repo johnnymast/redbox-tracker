@@ -64,7 +64,6 @@ class Tracker
         $routeName = request()->route()->getName();
         $methodName = request()->getMethod();
 
-//        session()->forget('visitor'); return true;
         /**
          * Check if we should skip the current round.
          */

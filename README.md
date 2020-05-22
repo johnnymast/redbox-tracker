@@ -6,11 +6,9 @@
 Tracking Movement
 </h2>
 
-<h2 align="center">
-   Redbox-tracker
-</h2>
 
 <p align="center">
+<a href="https://github.com/johnnymast/redbox-tracker/actions?query=workflow%3APhpcs"><img src="https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg" /></a>
 </p>
 
 

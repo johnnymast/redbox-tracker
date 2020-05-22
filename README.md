@@ -1,18 +1,33 @@
 ![Phpcs](https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg)
 
-# Redbox-Tracker
+# Redbox-tracker
 WORK IN PROGRESS!
 
 This project is inspired by [Laravel Visitor Tracker](https://github.com/voerro/laravel-visitor-tracker). I have created my own version of this software because I need that functionality for a project of my own. This means i want all my dependenties for that
 projects 'in house'.
+
 
 ## TODO
 
 - [ ] add $except in middleware
 - [ ] publish middleware
 - [ ] collect more user information
-- [ ] fire event for new visitors
-  
+- [x] fire event for new visitors
+
+# Getting started
+
+## Prerequisites
+
+We don't require much bug these are the minimum requirements. 
+
+- Php 7.2
+- Laravel 6 or higher
+
+## Installation  
+
+```bash
+composer require redbox/tracker
+```
 
 ## Author
 

@@ -7,7 +7,7 @@ return [
     | Middleware
     |--------------------------------------------------------------------------
     |
-    | By default redbox-tracker automatically attaches it self to the web
+    | By default Redbox-tracker automatically attaches it self to the web
     | middleware. You are free to change this to any middleware group alias for
     | example auth or any custom group you might have created.
     |
@@ -15,6 +15,24 @@ return [
   'middleware' => [
     'attach' => ['web'],
     'track' => ['guest']
+  ],
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Broadcasting Events
+    |--------------------------------------------------------------------------
+    |
+    | Once a new visitor has been created a NewVisitorNotification event will
+    | be broadcasted. You can choose to disable this or configure your own event.
+    |
+    | Please note: If you to broadcast your own event make sure to accept
+    | the visitor information as the first argument.
+    */
+  'events' => [
+    'dispatch' => true,
+    'channel' => 'redbox-tracker-new-visitors',
+    'event' => Redbox\Tracker\Events\NewVisitorNotification::class,
   ],
 
     /*

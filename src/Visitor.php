@@ -86,9 +86,9 @@ class Visitor extends Model
     /**
      * Return the requests made by this visitor.
      *
-     * @return array
+     * @return Visitor[]
      */
-    public function requests(): array
+    public function requests()
     {
         return $this->hasMany(VisitorRequest::class);
     }

@@ -44,7 +44,7 @@ Install the database tables:
 ```php
 php artisan migrate
 ```
-
+ 
 Create a listener for new visitors in your project: 
 
 ```bash

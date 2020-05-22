@@ -15,7 +15,6 @@ Redbox-tracker allows helps you to track visiting traffic to your Laravel websit
 This package is still being developed. Using this package at this point is discouraged.
 
 
-
 ## TODO
 
 - [ ] collect more user information
@@ -61,7 +60,6 @@ use Redbox\Tracker\Events\NewVisitorNotification;
 And update the <code>$listen</code> array with:
 
 ```php
-    /.../
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
@@ -70,14 +68,12 @@ And update the <code>$listen</code> array with:
             \App\Listeners\NewvisitorListener::class,
         ]
     ];
-    /.../
 ```
 
 In <code>App\Listeners\NewvisitorListener</copde> you now have access to the visitor data from <coode>$event->visitor</code>.
 
 
 ```php
-     /.../
     /**
      * Handle the event.
      *
@@ -88,7 +84,6 @@ In <code>App\Listeners\NewvisitorListener</copde> you now have access to the vis
     {
         dd($event->visitor);
     }
-    /.../
 ```
 
 ## Documentation
@@ -97,7 +92,7 @@ For more detailed information about how to use this package I would like to send
 
 ## Disclaimer
 
-This project is inspired by Laravel Visitor Tracker. I have created my own version of this software because I need that functionality for a project of my own. 
+This project is inspired by [Laravel Visitor Tracker](https://github.com/voerro/laravel-visitor-tracker). I have created my own version of this software because I need that functionality for a project of my own. 
 This means I want all my dependencies for that projects 'Inhouse'.
 
 

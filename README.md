@@ -4,7 +4,7 @@
 [![Phpcs tests](https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg)](https://github.com/johnnymast/redbox-tracker/actions?query=workflow-phpcs)
 
 <h2 align="center">
-   blabla
+   Redbox-tracker
 </h2>
 # Redbox-tracker
 WORK IN PROGRESS!

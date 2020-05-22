@@ -1,5 +1,4 @@
 ![small](https://user-images.githubusercontent.com/121194/82691564-6b57da80-9c5e-11ea-87ec-639ad2255e8a.png)
-
 ![Phpcs](https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg)
 
 

@@ -6,12 +6,14 @@
 
 <h2 align="center">
    Redbox-tracker
-   [![Phpcs tests](https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg)](https://github.com/johnnymast/redbox-tracker/actions?query=workflow%3APhpcs)
-
+  
 </h2>
 
 <p align="center">
 </p>
+ [![Phpcs tests](https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg)](https://github.com/johnnymast/redbox-tracker/actions?query=workflow%3APhpcs)
+
+
 
 
 # Redbox-tracker

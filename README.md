@@ -18,8 +18,6 @@ This package is still being development. Using this package at this point in tim
 
 ## TODO
 
-- [ ] add $except in middleware
-- [ ] publish middleware
 - [ ] collect more user information
 - [x] fire event for new visitors
 

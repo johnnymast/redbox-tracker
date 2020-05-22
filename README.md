@@ -12,7 +12,7 @@ Redbox-tracker allows helps you to track visiting traffic to your Laravel websit
 
 ## WORK IN PROGRESS!
 
-This package is still being developed. Using this package at this point is discouraged.
+This package is in development. Using this package at this point is discouraged.
 
 
 ## TODO
@@ -70,7 +70,7 @@ And update the <code>$listen</code> array with:
     ];
 ```
 
-In <code>App\Listeners\NewvisitorListener</copde> you now have access to the visitor data from <coode>$event->visitor</code>.
+In <code>App\Listeners\NewvisitorListener</code> you now have access to the visitor data from <coode>$event->visitor</code>.
 
 
 ```php

@@ -81,13 +81,6 @@ class Tracker
         }
 
         /**
-         * Return false if the method is not allowed.
-         */
-        if ($config['allowed_methods'] === false && $this->dd->isBot() == true) {
-            return false;
-        }
-
-        /**
          * If we are not allowed to tracked authenticated users return false.
          */
         if ($config['track_authenticated_users'] == false && $user) {

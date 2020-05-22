@@ -1,4 +1,3 @@
-[![Phpcs tests](https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg)](https://github.com/johnnymast/redbox-tracker/actions?query=workflow%3APhpcs)
 
 
 <h6 align="center">
@@ -8,6 +7,10 @@
 <h2 align="center">
    Redbox-tracker
 </h2>
+
+[![Phpcs tests](https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg)](https://github.com/johnnymast/redbox-tracker/actions?query=workflow%3APhpcs)
+
+
 # Redbox-tracker
 WORK IN PROGRESS!
 

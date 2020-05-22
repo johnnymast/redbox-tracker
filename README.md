@@ -42,10 +42,37 @@ composer require redbox/tracker
 
 The package will automatically register itself.
 
-Publish configuration file and public assets:
+Publish configuration file:
 
 ```bash
 php artisan vendor:publish --provider="Redbox\Tracker\Providers\TrackerServiceProvider"
+```
+
+Create a listener for new visitors in your project: 
+
+```bash
+php artisan make:listener NewvisitorListener
+```
+
+In <code>App\Providers\EventServiceProvider</code> add 
+
+```php
+use Redbox\Tracker\Events\NewVisitorNotification;
+```
+
+And update the <code>$listen</code> array with:
+
+```php
+    /.../
+    protected $listen = [
+        Registered::class => [
+            SendEmailVerificationNotification::class,
+        ],
+        NewVisitorNotification::class => [
+            \App\Listeners\NewvisitorListener::class,
+        ]
+    ];
+    /.../
 ```
 
 

@@ -8,7 +8,7 @@ Tracking Movement
 <a href="https://github.com/johnnymast/redbox-tracker/actions?query=workflow%3APhpcs"><img src="https://github.com/johnnymast/redbox-tracker/workflows/Phpcs/badge.svg" /></a>
 </p>
 
-This package helps you track visiting traffic to your laravel website. 
+Redbox-tracker allows helps you track visiting traffic to your laravel website. 
 
 ## WORK IN PROGRESS!
 

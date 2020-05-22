@@ -98,7 +98,7 @@ class TrackerServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->loadMigrationsFrom(realpath(__DIR__ . '/../../migrations'));
+        $this->loadMigrationsFrom(realpath(__DIR__.'/../Migrations'));
 
         Visitor::observe(VisitorObserver::class);
     }

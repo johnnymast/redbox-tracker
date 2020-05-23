@@ -1,9 +1,35 @@
 <?php
 
+/**
+ * CreateVisitorRequestsTable.php
+ *
+ * This migration creates the visitor_requests table.
+ *
+ * PHP version 7.2
+ *
+ * @category Providers
+ * @package  RedboxTracker
+ * @author   Johnny Mast <mastjohnny@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT
+ * @link     https://github.com/johnnymast/redbox-tracker
+ * @since    GIT:1.0
+ */
+
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * Class CreateVisitorRequestsTable
+ *
+ * @category Migrations
+ * @package  RedboxTracker
+ * @author   Johnny Mast <mastjohnny@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT
+ * @link     https://github.com/johnnymast/redbox-tracker
+ * @since    GIT:1.0
+ */
 class CreateVisitorRequestsTable extends Migration
 {
     /**

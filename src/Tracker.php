@@ -59,9 +59,9 @@ class Tracker
      */
     public function recordVisit(): bool
     {
-        $config = config('redbox-tracker');
-        $user = request()->user();
-        $routeName = request()->route()->getName();
+        $config     = config('redbox-tracker');
+        $user       = request()->user();
+        $routeName  = request()->route()->getName();
         $methodName = request()->getMethod();
 
         /**
@@ -110,15 +110,15 @@ class Tracker
         event(new NewVisitorNotification($visitor));
         $visitor->save();
 
-        $visitorRequest = new VisitorRequest();
+        $visitorRequest             = new VisitorRequest();
         $visitorRequest->visitor_id = $visitor['id'];
-        $visitorRequest->domain = request()->getHttpHost();
-        $visitorRequest->method = $methodName;
-        $visitorRequest->route = $routeName;
-        $visitorRequest->referer = request()->headers->get('Referer');
-        $visitorRequest->is_secure = request()->isSecure();
-        $visitorRequest->is_ajax = \request()->ajax();
-        $visitorRequest->path = request()->path() ?? '';
+        $visitorRequest->domain     = request()->getHttpHost();
+        $visitorRequest->method     = $methodName;
+        $visitorRequest->route      = $routeName;
+        $visitorRequest->referer    = request()->headers->get('Referer');
+        $visitorRequest->is_secure  = request()->isSecure();
+        $visitorRequest->is_ajax    = \request()->ajax();
+        $visitorRequest->path       = request()->path() ?? '';
 
         $visitor->requests()->save($visitorRequest);
 

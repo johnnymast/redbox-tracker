@@ -13,8 +13,7 @@ return [
     |
     */
   'middleware' => [
-    'attach' => ['web'],
-    'track' => ['guest']
+    'attach' => ['web']
   ],
 
 

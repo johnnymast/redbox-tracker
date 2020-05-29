@@ -55,13 +55,16 @@ class VisitorObserverTest extends TestCase
         $didFire = false;
         
         Route::get(
-          'test-middleware', function (Request $request) {
-            //
-        })->middleware(TrackingMiddleware::class);
+            'test-middleware', function (Request $request) {
+                //
+            }
+        )->middleware(TrackingMiddleware::class);
         
-        Event::listen('eloquent.creating: Redbox\Tracker\Visitor', function () use (&$didFire) {
-            $didFire = true;
-        });
+        Event::listen(
+            'eloquent.creating: Redbox\Tracker\Visitor', function () use (&$didFire) {
+                $didFire = true;
+            }
+        );
         
         
         $this->get('test-middleware');

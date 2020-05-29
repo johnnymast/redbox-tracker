@@ -1,7 +1,7 @@
 <?php
 
 /**
- * NewVisitorNotification.php
+ * NewVisitorEvent.php
  *
  * Laravel identification for the Tracker Facade defined in
  * TrackerServiceProvider.php.
@@ -27,7 +27,7 @@ use Illuminate\Broadcasting\Channel;
 use Redbox\Tracker\Visitor;
 
 /**
- * Class NewVisitorNotification
+ * Class NewVisitorEvent
  *
  * Identifies the Tracker Facade.
  *
@@ -40,12 +40,9 @@ use Redbox\Tracker\Visitor;
  * @link     https://github.com/johnnymast/redbox-tracker
  * @since    GIT:1.0
  */
-class NewVisitorNotification
+class NewVisitorEvent
 {
     use Dispatchable;
-//    use InteractsWithSockets;
-  //  use SerializesModels;
-
 
     /**
      * @var Visitor $visitor the new visitor

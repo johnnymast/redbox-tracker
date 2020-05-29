@@ -26,7 +26,7 @@
 namespace Redbox\Tracker;
 
 use DeviceDetector\DeviceDetector;
-use Redbox\Tracker\Events\NewVisitorNotification;
+use Redbox\Tracker\Events\NewVisitorEvent;
 
 /**
  * Tracker class
@@ -59,9 +59,9 @@ class Tracker
      */
     public function recordVisit(): bool
     {
-        $config     = config('redbox-tracker');
-        $user       = request()->user();
-        $routeName  = request()->route()->getName();
+        $config = config('redbox-tracker');
+        $user = request()->user();
+        $routeName = request()->route()->getName();
         $methodName = request()->getMethod();
 
         /**
@@ -82,14 +82,14 @@ class Tracker
         /**
          * If we are not allowed to tracked authenticated users return false.
          */
-        if ($config['track_authenticated_users'] == false && $user) {
+        if ($config['track_authenticated_visitors'] == false && $user) {
             return false;
         }
 
         /**
          * If we are not allowed to tracked authenticated users return false.
          */
-        if ($config['track_unauthenticated_users'] == false && !$user) {
+        if ($config['track_authenticated_visitors'] == false && !$user) {
             return false;
         }
 
@@ -104,21 +104,21 @@ class Tracker
 
         if ($visitor->exists === false) {
             if ($config['events']['dispatch']) {
-                event(new NewVisitorNotification($visitor));
+                event(new NewVisitorEvent($visitor));
             }
         }
-        event(new NewVisitorNotification($visitor));
+      
         $visitor->save();
 
-        $visitorRequest             = new VisitorRequest();
+        $visitorRequest = new VisitorRequest();
         $visitorRequest->visitor_id = $visitor['id'];
-        $visitorRequest->domain     = request()->getHttpHost();
-        $visitorRequest->method     = $methodName;
-        $visitorRequest->route      = $routeName;
-        $visitorRequest->referer    = request()->headers->get('Referer');
-        $visitorRequest->is_secure  = request()->isSecure();
-        $visitorRequest->is_ajax    = \request()->ajax();
-        $visitorRequest->path       = request()->path() ?? '';
+        $visitorRequest->domain = request()->getHttpHost();
+        $visitorRequest->method = $methodName;
+        $visitorRequest->route = $routeName;
+        $visitorRequest->referer = request()->headers->get('Referer');
+        $visitorRequest->is_secure = request()->isSecure();
+        $visitorRequest->is_ajax = \request()->ajax();
+        $visitorRequest->path = request()->path() ?? '';
 
         $visitor->requests()->save($visitorRequest);
 

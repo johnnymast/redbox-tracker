@@ -57,7 +57,7 @@ php artisan make:listener NewvisitorListener
 In <code>App\Providers\EventServiceProvider</code> add 
 
 ```php
-use Redbox\Tracker\Events\NewVisitorNotification;
+use Redbox\Tracker\Events\NewVisitorEvent;
 ```
 
 And update the <code>$listen</code> array with:

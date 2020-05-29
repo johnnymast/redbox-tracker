@@ -30,8 +30,7 @@ return [
     */
   'events' => [
     'dispatch' => true,
-    'channel' => 'redbox-tracker-new-visitors',
-    'event' => Redbox\Tracker\Events\NewVisitorNotification::class,
+    'channel' => 'redbox-tracker-new-visitors'
   ],
 
     /*
@@ -39,13 +38,13 @@ return [
     | Who or what to track
     |--------------------------------------------------------------------------
     |
-    | By default we dont track authenticated users in the system but track
-    | users (fpr example website visitor) who are not authenticated. If you wish
-    | you could change this below.
+    | By default we dont track authenticated user accounts in the system but it does
+    | track non authenticated users (for example website visitor). If you wish you
+    | could change this below.
     |
     */
-  'track_authenticated_users' => false,
-  'track_unauthenticated_users' => true,
+  'track_authenticated_visitors' => false,
+  'track_unauthenticated_visitors' => true,
 
     /*
     |--------------------------------------------------------------------------

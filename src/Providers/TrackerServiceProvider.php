@@ -84,6 +84,7 @@ class TrackerServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->registerPublishableResources();
         }
+
         $middlewareGroups = config('redbox-tracker.middleware.attach');
 
         foreach ($middlewareGroups as $group) {
@@ -98,7 +99,7 @@ class TrackerServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->loadMigrationsFrom(realpath(__DIR__.'/../Migrations'));
+        $this->loadMigrationsFrom(realpath(__DIR__.'/../database/migrations'));
 
         Visitor::observe(VisitorObserver::class);
     }

@@ -36,4 +36,8 @@
     <rule ref="PSR2.Namespaces.UseDeclaration"/>
     <rule ref="Squiz.PHP.InnerFunctions"/>
     <rule ref="Squiz.PHP.NonExecutableCode"/>
+    <file>src</file>
+    <file>tests</file>
+    <file>database</file>
+    <file>publishable</file>
 </ruleset>

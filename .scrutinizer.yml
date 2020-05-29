@@ -3,8 +3,8 @@ build:
     analysis:
       tests:
         override:
-          - php-scrutinizer-run
-          - phpcs-run
+          - command: phpcs-run --config phpcs.xml
+          - command:  php-scrutinizer-run
 
 filter:
   excluded_paths:

@@ -58,7 +58,7 @@ class Visitor extends Model
      *
      * @return int|void
      */
-    public static function createUniqueID()
+    public static function createUniqueID(): int
     {
         $number = mt_rand(1000000000, 9999999999); // better than rand()
 
@@ -75,9 +75,9 @@ class Visitor extends Model
      *
      * @param string $id The unique id to check for
      *
-     * @return mixed
+     * @return bool
      */
-    public static function uniqueIdExists($id)
+    public static function uniqueIdExists($id): bool
     {
         return Visitor::whereUniqueId($id)->exists();
     }

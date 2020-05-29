@@ -15,11 +15,12 @@
  * @since    GIT:1.0
  */
 
-namespace Redbox\Tracker\Tests;
+namespace Redbox\Tracker\Tests\Feature\Middleware;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Redbox\Tracker\Middleware\TrackingMiddleware;
 use Illuminate\Support\Facades\Route;
+use Redbox\Tracker\Tests\TestCase;
 use Illuminate\Http\Request;
 
 /**

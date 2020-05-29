@@ -36,7 +36,7 @@ class VisitorObserver
     /**
      * Create a mew unique identifier for the new visitor.
      *
-     * @param  Visitor  $visitor  The visitor that is about to be created.
+     * @param Visitor $visitor The visitor that is about to be created.
      *
      * @return void
      */

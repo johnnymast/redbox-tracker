@@ -77,7 +77,7 @@ class TrackerServiceProvider extends ServiceProvider
         if ($this->app->config->get('redbox-tracker') === null) {
             $this->app->config->set(
                 'redbox-tracker',
-                require __DIR__ . '/../../publishable/config/tracker.php'
+                include __DIR__ . '/../../publishable/config/tracker.php'
             );
         }
 

@@ -38,11 +38,12 @@ class TrackingMiddleware
     /**
      * Get the path the user should be redirected to when they are not authenticated.
      *
-     * @param  \Illuminate\Http\Request  $request  The incoming request
-     * @param  Closure  $next  The next Middleware to execute.
+     * @param \Illuminate\Http\Request $request The incoming request
+     * @param Closure                  $next    The next Middleware to execute.
+     *
      * @return string|null
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next): String
     {
         Tracker::recordVisit();
         

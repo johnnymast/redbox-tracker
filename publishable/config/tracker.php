@@ -1,5 +1,20 @@
 <?php
 
+/**
+ * Tracker.php
+ *
+ * This file contains the configuration for Redbox-tracker.
+ *
+ * PHP version 7.2
+ *
+ * @category Configuration
+ * @package  RedboxTracker
+ * @author   Johnny Mast <mastjohnny@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT
+ * @link     https://github.com/johnnymast/redbox-tracker
+ * @since    GIT:1.0
+ */
+
 return [
 
     /*

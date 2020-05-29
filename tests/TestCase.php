@@ -39,6 +39,8 @@ abstract class TestCase extends Orchestra
     
     /**
      * Initialize Orchestra.
+     *
+     * @return void
      */
     public function setUp(): void
     {
@@ -49,11 +51,10 @@ abstract class TestCase extends Orchestra
     }
     
     
-    
     /**
      * Link the package service provider.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param \Illuminate\Foundation\Application $app The Application
      *
      * @return array
      */
@@ -67,25 +68,33 @@ abstract class TestCase extends Orchestra
     /**
      * Setup the database for the tests.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param \Illuminate\Foundation\Application $app The Application
+     *
+     * @return void
      */
     protected function getEnvironmentSetUp($app): void
     {
         $app['config']->set('database.default', 'testdb');
-        $app['config']->set('database.connections.testdb', [
-          'driver' => 'sqlite',
-          'database' => ':memory:'
-        ]);
+        $app['config']->set(
+            'database.connections.testdb', [
+            'driver' => 'sqlite',
+            'database' => ':memory:'
+            ]
+        );
     }
     
+    /**
+     * Migrate the database.
+     *
+     * @return void
+     */
     protected function migrateDb(): void
     {
         $migrationsPath = realpath(__DIR__.'/../database/migrations');
         $migrationsPath = str_replace('\\', '/', $migrationsPath);
         
         $this
-          ->artisan("migrate --database=testdb --path={$migrationsPath} --realpath")
-          ->assertExitCode(0);
+            ->artisan("migrate --database=testdb --path={$migrationsPath} --realpath")
+            ->assertExitCode(0);
     }
-    
 }

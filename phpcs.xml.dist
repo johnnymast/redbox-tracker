@@ -40,4 +40,26 @@
     <file>tests</file>
     <file>database</file>
     <file>publishable</file>
+
+     <arg name="basepath" value="."/>
+        <arg name="colors"/>
+        <arg name="parallel" value="75"/>
+        <arg value="np"/>
+
+        <!-- Don't hide tokenizer exceptions -->
+        <rule ref="Internal.Tokenizer.Exception">
+            <type>error</type>
+        </rule>
+
+        <!-- Include the whole PEAR standard -->
+        <rule ref="PEAR">
+            <exclude name="PEAR.NamingConventions.ValidFunctionName"/>
+            <exclude name="PEAR.NamingConventions.ValidVariableName"/>
+            <exclude name="PEAR.Commenting.ClassComment"/>
+            <exclude name="PEAR.Commenting.FileComment.MissingCategoryTag"/>
+            <exclude name="PEAR.Commenting.FileComment.MissingPackageTag"/>
+            <exclude name="PEAR.Commenting.FileComment.MissingLinkTag"/>
+            <exclude name="PEAR.Commenting.FileComment.MissingVersion"/>
+            <exclude name="PEAR.Commenting.InlineComment"/>
+        </rule>
 </ruleset>

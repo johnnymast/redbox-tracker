@@ -40,24 +40,24 @@ class CreateVisitorRequestsTable extends Migration
     public function up()
     {
         Schema::create(
-          'visitor_requests',
-          function (Blueprint $table) {
-              $table->increments('id');
-              $table->unsignedInteger('visitor_id');
-              $table->string('domain')->nullable();
-              $table->string('method')->nullable();
-              $table->string('path')->nullable();
-              $table->string('route')->nullable();
-              $table->string('referer')->nullable();
-              $table->boolean('is_secure')->default(false);
-              $table->boolean('is_ajax')->default(false);
-              $table->timestamps();
+            'visitor_requests',
+            function (Blueprint $table) {
+                $table->increments('id');
+                $table->unsignedInteger('visitor_id');
+                $table->string('domain')->nullable();
+                $table->string('method')->nullable();
+                $table->string('path')->nullable();
+                $table->string('route')->nullable();
+                $table->string('referer')->nullable();
+                $table->boolean('is_secure')->default(false);
+                $table->boolean('is_ajax')->default(false);
+                $table->timestamps();
               
-              $table->foreign('visitor_id')
-                ->references('id')
-                ->on('visitors')
-                ->onDelete('cascade');
-          }
+                $table->foreign('visitor_id')
+                    ->references('id')
+                    ->on('visitors')
+                    ->onDelete('cascade');
+            }
         );
     }
     

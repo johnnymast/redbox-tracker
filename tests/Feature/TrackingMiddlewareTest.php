@@ -39,31 +39,35 @@ class TrackingMiddlewareTest extends TestCase
     /**
      * Test if the middleware is being used if the web middleware
      * group has been used.
+     *
+     * @return void
      */
-    public function test_should_be_used_with_web_middleware_group()
+    public function test_should_be_used_with_web_middleware_group(): void
     {
         $this->withoutExceptionHandling();
         
         $router = resolve(\Illuminate\Routing\Router::class);
         $middleWareGroups = $router->getMiddlewareGroups();
         
-        Route::get('test-middleware', function (Request $request) use ($middleWareGroups) {
-            $routeMiddleWareGroups = $request->route()->gatherMiddleware();
-            $found = false;
+        Route::get(
+            'test-middleware', function (Request $request) use ($middleWareGroups) {
+                $routeMiddleWareGroups = $request->route()->gatherMiddleware();
+                $found = false;
             
-            foreach ($routeMiddleWareGroups as $groupName) {
-                if (isset($middleWareGroups[$groupName]) === true) {
-                    $group = $middleWareGroups[$groupName];
+                foreach ($routeMiddleWareGroups as $groupName) {
+                    if (isset($middleWareGroups[$groupName]) === true) {
+                        $group = $middleWareGroups[$groupName];
                     
-                    if (in_array(TrackingMiddleware::class, $group)) {
-                        $found = true;
+                        if (in_array(TrackingMiddleware::class, $group)) {
+                            $found = true;
+                        }
                     }
                 }
-            }
             
-            $this->assertTrue($found);
-        })->middleware('web');
-//
+                $this->assertTrue($found);
+            }
+        )->middleware('web');
+        //
         
         $this->get('/test-middleware');
     }

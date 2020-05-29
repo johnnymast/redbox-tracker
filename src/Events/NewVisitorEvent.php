@@ -20,10 +20,7 @@ namespace Redbox\Tracker\Events;
 
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;
-use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Broadcasting\Channel;
 use Redbox\Tracker\Visitor;
 
 /**
@@ -43,12 +40,15 @@ use Redbox\Tracker\Visitor;
 class NewVisitorEvent
 {
     use Dispatchable;
-
+    use InteractsWithSockets;
+    
     /**
+     * The new visitor is publicly available.
+     *
      * @var Visitor $visitor the new visitor
      */
     public $visitor;
-
+    
     /**
      * Create a new event instance.
      *
@@ -58,7 +58,7 @@ class NewVisitorEvent
     {
         $this->visitor = $visitor;
     }
-
+    
     /**
      * Get the channels the event should broadcast on.
      *

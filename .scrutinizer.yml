@@ -3,7 +3,7 @@ build:
     analysis:
       tests:
         override:
-          - command: phpcs
+          - command: phpcs-run
           - command: php-scrutinizer-run
 
 filter:

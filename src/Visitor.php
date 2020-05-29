@@ -75,9 +75,9 @@ class Visitor extends Model
      *
      * @param string $id The unique id to check for
      *
-     * @return bool
+     * @return mixed
      */
-    public static function uniqueIdExists($id): bool
+    public static function uniqueIdExists($id)
     {
         return Visitor::whereUniqueId($id)->exists();
     }

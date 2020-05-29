@@ -26,6 +26,7 @@
 namespace Redbox\Tracker;
 
 use DeviceDetector\DeviceDetector;
+use Illuminate\Support\Facades\Auth;
 use Redbox\Tracker\Events\NewVisitorEvent;
 
 /**
@@ -42,7 +43,7 @@ use Redbox\Tracker\Events\NewVisitorEvent;
  */
 class Tracker
 {
-
+    
     /**
      * Tracker constructor.
      */
@@ -51,7 +52,7 @@ class Tracker
         $this->dd = new DeviceDetector(request()->header('User-Agent'));
         $this->dd->parse();
     }
-
+    
     /**
      * Record the visit can create a new record if needed.
      *
@@ -63,14 +64,14 @@ class Tracker
         $user = request()->user();
         $routeName = request()->route()->getName();
         $methodName = request()->getMethod();
-
+        
         /**
          * Check if we should skip the current round.
          */
         if (in_array($routeName, $config['skip_routes'])) {
             return false;
         }
-
+        
         /**
          * If the request method is not in the allowed methods
          * array return false.
@@ -78,38 +79,36 @@ class Tracker
         if (!in_array($methodName, $config['allowed_methods'])) {
             return false;
         }
-
-        /**
-         * If we are not allowed to tracked authenticated users return false.
-         */
-        if ($config['track_authenticated_visitors'] == false && $user) {
+        
+        if (Auth::check()) {
+            /**
+             * If we are not allowed to tracked authenticated users return false.
+             */
+            if ($config['track_authenticated_visitors'] == false) {
+                return false;
+            }
+        } elseif ($config['track_unauthenticated_visitors'] == false) {
             return false;
         }
-
-        /**
-         * If we are not allowed to tracked authenticated users return false.
-         */
-        if ($config['track_authenticated_visitors'] == false && !$user) {
-            return false;
-        }
-
+        
+        
         if (session()->has('visitor') === true) {
             $visitor = session()->get('visitor');
             $visitor = Visitor::find($visitor['id']);
         } else {
             $visitor = new Visitor();
         }
-
+        
         $visitor->fill($this->collect());
-
+        
         if ($visitor->exists === false) {
             if ($config['events']['dispatch']) {
                 event(new NewVisitorEvent($visitor));
             }
         }
-      
+        
         $visitor->save();
-
+        
         $visitorRequest = new VisitorRequest();
         $visitorRequest->visitor_id = $visitor['id'];
         $visitorRequest->domain = request()->getHttpHost();
@@ -119,15 +118,15 @@ class Tracker
         $visitorRequest->is_secure = request()->isSecure();
         $visitorRequest->is_ajax = \request()->ajax();
         $visitorRequest->path = request()->path() ?? '';
-
+        
         $visitor->requests()->save($visitorRequest);
-
+        
         request()->merge(['visitor' => $visitor]);
-        session()->put('visitor', $visitor->toArray());
-
+        session()->put('visitor', $visitor);
+        
         return true;
     }
-
+    
     /**
      * Collect Visitor information so we can store i with the visitor.
      *
@@ -136,14 +135,14 @@ class Tracker
     public function collect(): array
     {
         $request = request();
-
+        
         return [
           'ip' => $request->ip(),
           'user_id' => $request->user()->id ?? 0,
           'user_agent' => $request->userAgent(),
-          'is_mobile' => (int)$this->dd->isMobile(),
-          'is_desktop' => (int)$this->dd->isDesktop(),
-          'is_bot' => (int)$this->dd->isBot(),
+          'is_mobile' => (int) $this->dd->isMobile(),
+          'is_desktop' => (int) $this->dd->isDesktop(),
+          'is_bot' => (int) $this->dd->isBot(),
           'bot' => $this->dd->getBot()['name'] ?? '',
           'os' => $this->dd->getOs('name'),
           'browser_version' => $this->dd->getClient('version'),

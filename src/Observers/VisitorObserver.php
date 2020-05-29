@@ -18,6 +18,8 @@
 
 namespace Redbox\Tracker\Observers;
 
+use Redbox\Tracker\Visitor;
+
 /**
  * Class VisitorObserver
  *
@@ -30,16 +32,16 @@ namespace Redbox\Tracker\Observers;
  */
 class VisitorObserver
 {
-
+    
     /**
      * Create a mew unique identifier for the new visitor.
      *
-     * @param VisitorObserver $visitor The visitor that is about to be created.
+     * @param  Visitor  $visitor  The visitor that is about to be created.
      *
      * @return void
      */
     public function creating($visitor): void
     {
-        $visitor->unique_id = \Redbox\Tracker\Visitor::createUniqueID();
+        $visitor->unique_id = Visitor::createUniqueID();
     }
 }

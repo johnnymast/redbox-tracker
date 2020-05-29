@@ -84,12 +84,6 @@ class TrackerServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->registerPublishableResources();
         }
-
-        $middlewareGroups = config('redbox-tracker.middleware.attach');
-
-        foreach ($middlewareGroups as $group) {
-            app('router')->pushMiddlewareToGroup($group, TrackingMiddleware::class);
-        }
     }
 
     /**
@@ -100,7 +94,13 @@ class TrackerServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->loadMigrationsFrom(realpath(__DIR__.'/../database/migrations'));
-
+    
+        $middlewareGroups = config('redbox-tracker.middleware.attach');
+    
+        foreach ($middlewareGroups as $group) {
+            app('router')->pushMiddlewareToGroup($group, TrackingMiddleware::class);
+        }
+        
         Visitor::observe(VisitorObserver::class);
     }
 }

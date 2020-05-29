@@ -44,8 +44,11 @@ abstract class TestCase extends Orchestra
     {
         parent::setUp();
         
-        $this->withFactories(__DIR__ . '/../database/factories');
+        $this->withFactories(__DIR__.'/../database/factories');
+        $this->migrateDb();
     }
+    
+    
     
     /**
      * Link the package service provider.
@@ -74,4 +77,15 @@ abstract class TestCase extends Orchestra
           'database' => ':memory:'
         ]);
     }
+    
+    protected function migrateDb(): void
+    {
+        $migrationsPath = realpath(__DIR__.'/../database/migrations');
+        $migrationsPath = str_replace('\\', '/', $migrationsPath);
+        
+        $this
+          ->artisan("migrate --database=testdb --path={$migrationsPath} --realpath")
+          ->assertExitCode(0);
+    }
+    
 }

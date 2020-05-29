@@ -1,13 +1,13 @@
 <?php
 
 /**
- * TrackingMiddlewareTest.php
+ * VisitorFactory.php
  *
- * This file contains tests for the TrackingMiddleware.
+ * Factory file for Visitors.
  *
  * PHP version 7.2
  *
- * @category Tests
+ * @category Factories
  * @package  RedboxTracker
  * @author   Johnny Mast <mastjohnny@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT

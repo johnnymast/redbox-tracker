@@ -24,9 +24,6 @@ use Redbox\Tracker\Middleware\TrackingMiddleware;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
-//https://github.com/spatie/laravel-multitenancy/blob/master/tests/TestCase.php
-https://github.com/laravel/passport/blob/1d508bbe745b089994ec468666be560708fed11d/tests/Feature/ActingAsClientTest.php
-
 /**
  * Class TrackerTest
  *

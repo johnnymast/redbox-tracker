@@ -15,7 +15,7 @@
  *
  * PHP version 7.2
  *
- * @category Facades
+ * @category Core
  * @package  RedboxTracker
  * @author   Johnny Mast <mastjohnny@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT

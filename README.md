@@ -13,10 +13,6 @@ Tracking Movement
  
 Redbox-tracker allows helps you to track visiting traffic to your Laravel website. New visitors along with their requests will be saved to the database.
 
-## WORK IN PROGRESS!
-
-This package is in development. Using this package at this point is discouraged.
-
 # Getting started
 
 ## Prerequisites

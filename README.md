@@ -51,7 +51,7 @@ php artisan migrate
 Create a listener for new visitors in your project: 
 
 ```bash
-php artisan make:listener NewvisitorListener
+php artisan make:listener NewVisitorListener
 ```
 
 In <code>App\Providers\EventServiceProvider</code> add 
@@ -67,13 +67,13 @@ And update the <code>$listen</code> array with:
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        NewVisitorNotification::class => [
-            \App\Listeners\NewvisitorListener::class,
+        NewVisitorEvent::class => [
+            \App\Listeners\NewVisitorListener::class,
         ]
     ];
 ```
 
-In <code>App\Listeners\NewvisitorListener</code> you now have access to the visitor data from <code>$event->visitor</code>.
+In <code>App\Listeners\NewVisitorListener</code> you now have access to the visitor data from <code>$event->visitor</code>.
 
 
 ```php

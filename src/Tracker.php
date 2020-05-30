@@ -43,6 +43,12 @@ use Redbox\Tracker\Events\NewVisitorEvent;
  */
 class Tracker
 {
+    /**
+     * The DeviceDetector.
+     *
+     * @var DeviceDetector
+     */
+    private $dd;
     
     /**
      * Tracker constructor.
@@ -61,7 +67,6 @@ class Tracker
     public function recordVisit(): bool
     {
         $config = config('redbox-tracker');
-        $user = request()->user();
         $routeName = request()->route()->getName();
         $methodName = request()->getMethod();
         

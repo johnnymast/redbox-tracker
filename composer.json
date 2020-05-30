@@ -1,7 +1,7 @@
 {
   "name": "redbox/tracker",
   "description": "",
-  "keywords": [],
+  "keywords": ["laravel", "analytics"],
   "type": "library",
   "license": "MIT",
   "authors": [

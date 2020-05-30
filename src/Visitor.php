@@ -83,7 +83,6 @@ class Visitor extends Model
         return Visitor::whereUniqueId($id)->exists();
     }
     
-    
     /**
      * Return the requests made by this visitor.
      *

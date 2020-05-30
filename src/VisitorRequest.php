@@ -52,8 +52,7 @@ class VisitorRequest extends Model
       'is_secure',
       'is_ajax'
     ];
-
-
+    
     /**
      * Return the visitor for this request.
      *

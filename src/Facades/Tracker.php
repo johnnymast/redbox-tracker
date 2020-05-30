@@ -36,7 +36,6 @@ use Illuminate\Support\Facades\Facade;
  */
 class Tracker extends Facade
 {
-
     /**
      * Define the alias for this Tracker Facade.
      *

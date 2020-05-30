@@ -36,7 +36,7 @@ use Redbox\Tracker\Visitor;
  */
 class TrackerServiceProvider extends ServiceProvider
 {
-
+    
     /**
      * Register the publishable files.
      *
@@ -44,20 +44,19 @@ class TrackerServiceProvider extends ServiceProvider
      */
     private function registerPublishableResources(): void
     {
-        $path = dirname(__DIR__) . '/../../publishable';
-
+        $path = dirname(__DIR__).'/../../publishable';
+        
         $publishable = [
           'config' => [
             "{$path}/config/tracker.php" => config_path('tracker.php'),
           ],
         ];
-
+        
         foreach ($publishable as $group => $paths) {
             $this->publishes($paths, $group);
         }
     }
-
-
+    
     /**
      * Register configurations and facade(s).
      *
@@ -71,21 +70,21 @@ class TrackerServiceProvider extends ServiceProvider
                 return new Tracker();
             }
         );
-
+        
         $this->app->alias(Tracker::class, 'redbox-tracker-tracker');
-
-        if ($this->app->config->get('redbox-tracker') === null) {
-            $this->app->config->set(
+        
+        if (config()->get('redbox-tracker') === null) {
+            config()->set(
                 'redbox-tracker',
-                include __DIR__ . '/../../publishable/config/tracker.php'
+                include __DIR__.'/../../publishable/config/tracker.php'
             );
         }
-
+        
         if ($this->app->runningInConsole()) {
             $this->registerPublishableResources();
         }
     }
-
+    
     /**
      * Tell Laravel where to look for the package it's migrations.
      *
@@ -93,10 +92,10 @@ class TrackerServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->loadMigrationsFrom(realpath(__DIR__ . '/../database/migrations'));
-    
+        $this->loadMigrationsFrom(realpath(__DIR__.'/../database/migrations'));
+        
         $middlewareGroups = config('redbox-tracker.middleware.attach');
-    
+        
         foreach ($middlewareGroups as $group) {
             app('router')->pushMiddlewareToGroup($group, TrackingMiddleware::class);
         }

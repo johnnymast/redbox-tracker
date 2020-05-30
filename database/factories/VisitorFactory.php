@@ -27,7 +27,7 @@ use Illuminate\Support\Str;
 
 $factory->define(
     Visitor::class,
-    function (Faker\Generator $faker) {
+    function (Faker $faker) {
         return [
         'user_id' => $faker->numberBetween(1, 100),
         'user_agent' => $faker->userAgent(),

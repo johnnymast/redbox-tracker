@@ -104,7 +104,7 @@ This package is created and maintained by [Johnny Mast](mailto:mastjohnny@gmail.
 
 ## Enjoy
 
-Oh and if you've come down this far, you might as well [follow me](https://twitter.com/mastjohnny) on Twitter. 
+Oh and if you've come down this far, you might as well [follow me](https://twitter.com/mastjohnny) on Twitter.
 If you like this software please consider giving it a start rating on GitHub.
  
 

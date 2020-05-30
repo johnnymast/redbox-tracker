@@ -95,7 +95,7 @@ class TrackerServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->loadMigrationsFrom(realpath(__DIR__.'/../database/migrations'));
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         
         $middlewareGroups = config('redbox-tracker.middleware.attach');
         

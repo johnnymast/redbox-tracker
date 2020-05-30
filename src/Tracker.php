@@ -99,7 +99,6 @@ class Tracker
         
         if (session()->has('visitor') === true) {
             $visitor = session()->get('visitor');
-//            $visitor = Visitor::find($visitor['id']);
         } else {
             $visitor = new Visitor();
         }

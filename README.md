@@ -23,7 +23,7 @@ We don't require much, but these are the minimum requirements for using Redbox-t
 - Laravel 6 or higher
 
 There is one additional requirement if you are contributing to this package.
-For development on the package itself we require <code>pdo_sqlite</code> for testing.
+For development on the package itself, we require <code>pdo_sqlite</code> for testing.
 
 ## Installation  
 
@@ -90,11 +90,11 @@ In <code>App\Listeners\NewVisitorListener</code> you now have access to the visi
 
 ## Documentation
 
-For more detailed information about how to use this package I would like to send you to the [project wiki](https://github.com/johnnymast/redbox-tracker/wiki).
+For more detailed information about how to use this package, I would like to send you to the [project wiki](https://github.com/johnnymast/redbox-tracker/wiki).
 
 ## Disclaimer
 
-This project is inspired by [Laravel Visitor Tracker](https://github.com/voerro/laravel-visitor-tracker). I have created my own version of this software because I need that functionality for a project of my own. 
+This project is inspired by [Laravel Visitor Tracker](https://github.com/voerro/laravel-visitor-tracker). I created this version of this software because I need that functionality for a project of my own. 
 This means I want all my dependencies for that projects 'Inhouse'.
 
 
@@ -104,7 +104,7 @@ This package is created and maintained by [Johnny Mast](mailto:mastjohnny@gmail.
 
 ## Enjoy
 
-Oh and if you've come down this far, you might as well [follow me](https://twitter.com/mastjohnny) on twitter.
+Oh and if you've come down this far, you might as well [follow me](https://twitter.com/mastjohnny) on Twitter.
  
 
 ## License

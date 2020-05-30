@@ -20,8 +20,8 @@
 
 namespace Redbox\Tracker;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * VisitorRequest class
@@ -57,9 +57,9 @@ class VisitorRequest extends Model
     /**
      * Return the visitor for this request.
      *
-     * @return Visitor
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function visitor(): Visitor
+    public function visitor(): BelongsTo
     {
         return $this->belongsTo(Visitor::class);
     }

@@ -19,6 +19,7 @@
 
 namespace Redbox\Tracker;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -37,7 +38,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Visitor extends Model
 {
-
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -52,7 +53,7 @@ class Visitor extends Model
       'ip',
       'os'
     ];
-
+    
     /**
      * Return a new unique id for a visitor.
      *
@@ -61,14 +62,14 @@ class Visitor extends Model
     public static function createUniqueID(): int
     {
         $number = mt_rand(1000000000, 9999999999); // better than rand()
-
+        
         if (self::uniqueIdExists($number)) {
             return self::createUniqueID();
         }
-
+        
         return $number;
     }
-
+    
     /**
      * Check to see if a unique id already exists in
      * the database.
@@ -81,14 +82,14 @@ class Visitor extends Model
     {
         return Visitor::whereUniqueId($id)->exists();
     }
-
-
+    
+    
     /**
      * Return the requests made by this visitor.
      *
-     * @return Visitor[]
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function requests()
+    public function requests(): HasMany
     {
         return $this->hasMany(VisitorRequest::class);
     }

@@ -43,7 +43,7 @@ class TrackingMiddleware
      *
      * @return string|null
      */
-    public function handle($request, Closure $next): String
+    public function handle($request, Closure $next): string
     {
         Tracker::recordVisit();
         

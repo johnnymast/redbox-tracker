@@ -36,7 +36,7 @@ class CreateVisitorsTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create(
             'visitors', function (Blueprint $table) {
@@ -70,7 +70,7 @@ class CreateVisitorsTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('visitors');
     }

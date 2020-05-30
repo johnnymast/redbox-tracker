@@ -64,7 +64,7 @@ class NewVisitorEvent
      *
      * @return PrivateChannel
      */
-    public function broadcastOn()
+    public function broadcastOn(): PrivateChannel
     {
         return new PrivateChannel(config('redbox-tracker.events.channel'));
     }

@@ -55,7 +55,10 @@ class Tracker
      */
     public function __construct()
     {
-        $this->dd = new DeviceDetector(request()->header('User-Agent'));
+        $this->dd = new DeviceDetector(/**
+ * @scrutinizer ignore-type 
+*/            request()->header('User-Agent')
+        );
         $this->dd->parse();
     }
     

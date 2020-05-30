@@ -23,7 +23,7 @@ We don't require much, but these are the minimum requirements.
 - Laravel 6 or higher
 
 There is one additional requirement if you are contributing to this package. 
-For development on the package itself we require <code>pdo_sqlite</cpde> for testing.
+For development on the package itself we require <code>pdo_sqlite</code> for testing.
 
 ## Installation  
 

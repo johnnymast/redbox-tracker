@@ -44,7 +44,7 @@ class TrackerServiceProvider extends ServiceProvider
      */
     private function registerPublishableResources(): void
     {
-        $path = dirname(__DIR__).'./../../publishable';
+        $path = dirname(__DIR__).'/../publishable';
         
         $publishable = [
           'config' => [
@@ -72,11 +72,14 @@ class TrackerServiceProvider extends ServiceProvider
         );
         
         $this->app->alias(Tracker::class, 'redbox-tracker-tracker');
-        
+    
+        /**
+         * Testing
+         */
         if (config()->get('redbox-tracker') === null) {
             config()->set(
                 'redbox-tracker',
-                include __DIR__.'./../../publishable/config/tracker.php'
+                include __DIR__.'/../../publishable/config/tracker.php'
             );
         }
         

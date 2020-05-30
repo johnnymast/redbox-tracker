@@ -1,7 +1,7 @@
 {
   "name": "redbox/tracker",
-  "description": "",
-  "keywords": ["laravel", "analytics"],
+  "description": "Real-time check the visitors on your Laravel installation.",
+  "keywords": ["laravel", "analytics", "real-time", "events"],
   "type": "library",
   "license": "MIT",
   "authors": [

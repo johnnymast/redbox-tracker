@@ -50,6 +50,9 @@ class TrackerServiceProvider extends ServiceProvider
           'config' => [
             "{$path}/config/tracker.php" => config_path('tracker.php'),
           ],
+          'migrations' => [
+            "{$path}/../database/migrations" => database_path('migrations')
+          ]
         ];
         
         foreach ($publishable as $group => $paths) {

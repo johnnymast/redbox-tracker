@@ -17,10 +17,13 @@ Redbox-tracker allows helps you to track visiting traffic to your Laravel websit
 
 ## Prerequisites
 
-We don't require much bug these are the minimum requirements. 
+We don't require much, but these are the minimum requirements. 
 
 - Php 7.2
 - Laravel 6 or higher
+
+There is one additional requirement if you are contributing to this package. 
+For development on the package itself we require <code>pdo_sqlite</cpde> for testing.
 
 ## Installation  
 

@@ -27,6 +27,10 @@ use Illuminate\Support\Facades\Facade;
  *
  * PHP version 7.2
  *
+ * @method public function recordVisit(): bool
+ *
+ * @see Redbox\Tracker\Tracker
+ *
  * @category Facades
  * @package  RedboxTracker
  * @author   Johnny Mast <mastjohnny@gmail.com>

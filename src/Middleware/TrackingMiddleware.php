@@ -41,9 +41,9 @@ class TrackingMiddleware
      * @param \Illuminate\Http\Request $request The incoming request
      * @param Closure                  $next    The next Middleware to execute.
      *
-     * @return string|null
+     * @return mixed
      */
-    public function handle($request, Closure $next): string
+    public function handle($request, Closure $next)
     {
         Tracker::recordVisit();
         

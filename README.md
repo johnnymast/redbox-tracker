@@ -53,22 +53,15 @@ Create a listener for new visitors in your project:
 php artisan make:listener NewVisitorListener
 ```
 
-In <code>App\Providers\EventServiceProvider</code> add 
-
-```php
-use Redbox\Tracker\Events\NewVisitorEvent;
-```
-
-And update the <code>$listen</code> array with:
+In <code>App\Providers\EventServiceProvider</code> and update the <code>$listen</code> array with:
 
 ```php
     protected $listen = [
-        Registered::class => [
-            SendEmailVerificationNotification::class,
-        ],
-        NewVisitorEvent::class => [
+        // --
+        \Redbox\Tracker\Events\NewVisitorEvent::class => [
             \App\Listeners\NewVisitorListener::class,
         ]
+        // --
     ];
 ```
 

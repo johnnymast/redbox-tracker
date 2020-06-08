@@ -95,9 +95,22 @@ This means I want all my dependencies for that projects 'Inhouse'.
 
 This package is created and maintained by [Johnny Mast](mailto:mastjohnny@gmail.com). For feature requests or suggestions you could consider sending me an e-mail.
 
+
+## Contributing
+
+Thank you for considering to contribute to Redbox-tracker.
+
+You can have a look at the [CHANGELOG](CHANGELOG.md) for constant updates & detailed information about the changes. You can also follow the twitter account for latest announcements or just come say hi!: [@enunomaduro](https://twitter.com/enunomaduro)
+
+## Support the development
+**Do you like this project? Support it by donating**
+
+- PayPal: [Donate](https://github.com/sponsors/johnnymast)
+- GitHub: [Donate](https://www.paypal.me/johnnymast)
+
 ## Enjoy
 
-Oh and if you've come down this far, you might as well [follow me](https://twitter.com/mastjohnny) on Twitter. If you like this software please consider giving it a start rating on GitHub.
+Oh! and if you've come down this far, you might as well [follow me](https://twitter.com/mastjohnny) on Twitter. If you like this software please consider giving it a start rating on GitHub.
  
 
 ## License

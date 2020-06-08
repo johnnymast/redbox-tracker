@@ -98,9 +98,8 @@ This package is created and maintained by [Johnny Mast](mailto:mastjohnny@gmail.
 
 ## Contributing
 
-Thank you for considering to contribute to Redbox-tracker.
+TODO
 
-You can have a look at the [CHANGELOG](CHANGELOG.md) for constant updates & detailed information about the changes. You can also follow the twitter account for latest announcements or just come say hi!: [@enunomaduro](https://twitter.com/enunomaduro)
 
 ## Support the development
 **Do you like this project? Support it by donating**

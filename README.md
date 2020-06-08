@@ -105,8 +105,8 @@ You can have a look at the [CHANGELOG](CHANGELOG.md) for constant updates & deta
 ## Support the development
 **Do you like this project? Support it by donating**
 
-- PayPal: [Donate](https://github.com/sponsors/johnnymast)
-- GitHub: [Donate](https://www.paypal.me/johnnymast)
+- GitHub: [Donate](https://github.com/sponsors/johnnymast)
+- PayPal: [Donate](https://www.paypal.me/johnnymast)
 
 ## Enjoy
 
